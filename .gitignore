@@ -49,6 +49,9 @@ typings/
 
 # Optional npm cache directory
 .npm
+.git
+.upm
+.breakpoints
 
 # Optional eslint cache
 .eslintcache
