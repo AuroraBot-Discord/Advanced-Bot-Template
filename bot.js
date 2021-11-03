@@ -55,19 +55,6 @@ for (const file of eventFiles) {
   }
 }
 
-const rawEventFiles = fs
-  .readdirSync("./raws")
-  .filter((file) => file.endsWith(".js"));
-
-for (const file of rawEventFiles) {
-  const event = require(`./raws/${file}`);
-  if (event.once) {
-    client.ws.once(event.name, (...args) => event.execute(client, ...args));
-  } else {
-    client.ws.on(event.name, (...args) => event.execute(client, ...args));
-  }
-}
-
 client.login(process.env.BOT_TOKEN);
 
 process.on("uncaughtException", (e) => {
