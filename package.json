@@ -1,0 +1,34 @@
+{
+  "name": "adcanced-bot-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-true": "npx eslint --fix .",
+    "lint": "npx npm run lint-true",
+    "pretty": "npx npm run pretty-true",
+    "pretty-true": "npx prettier --write .",
+    "fix": "npm run lint && npm run pretty"
+  },
+  "keywords": [],
+  "author": "AuroraBot",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-jsdoc": "^37.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "node": "^16.13.0",
+    "npm": "^8.1.2",
+    "prettier": "^2.4.1"
+  },
+  "engines": {
+    "node": ">=16.6.0"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "@discordjs/voice": "^0.7.2",
+    "discord.js": "^13.3.1",
+    "ffmpeg-static": "^4.4.0"
+  }
+}

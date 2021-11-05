@@ -1,0 +1,10 @@
+{
+  "prefix": "!",
+  "clientId": "",
+  "executable": {
+    "admin": [""],
+    "mod": []
+  },
+  "defaultCooldown": 3,
+  "errorLog": ""
+}
