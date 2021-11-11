@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { Client, Intents, Collection } = require("discord.js");
 
-const client = new Discord.Client({
+const client = new Client({
   intents: Object.values(Intents.FLAGS),
   allowedMentions: { repliedUser: false, parse: ["roles", "users"] },
   partials: ["CHANNEL", "GUILD_MEMBER", "MESSAGE", "REACTION", "USER"],
@@ -14,23 +14,11 @@ require("./helpers/extends");
 
 const config = require("./config.json");
 
-client.commands = new Discord.Collection();
-client.slash = new Discord.Collection();
-client.cooldowns = new Discord.Collection();
-
-const commandFolders = fs.readdirSync("./commands");
+client.commands = new Collection();
+client.slash = new Collection();
+client.cooldowns = new Collection();
 
 const slashCommandFolders = fs.readdirSync("./slash");
-
-for (const folder of commandFolders) {
-  const commandFiles = fs
-    .readdirSync(`./commands/${folder}`)
-    .filter((file) => file.endsWith(".js"));
-  for (const file of commandFiles) {
-    const command = require(`./commands/${folder}/${file}`);
-    client.commands.set(command.name, command);
-  }
-}
 
 for (const folder of slashCommandFolders) {
   const commandFiles = fs
